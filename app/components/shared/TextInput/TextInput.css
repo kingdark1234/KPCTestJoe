@@ -1,0 +1,73 @@
+.TextField{
+  display: block;
+  height: 42px;
+  width: 300px;
+  margin: 10px auto;
+  padding: 0 12px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  outline: none;
+  font-size: 17px;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: white;
+}
+.TextField:focus {
+  border-color: rgb(0, 128, 255);
+}
+
+.one{
+  display: block;
+  height: 42px;
+  width: 40px;
+  padding: 0 12px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  outline: none;
+  font-size: 17px;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: white;
+}
+
+.two{
+  display: block;
+  height: 42px;
+  width: 50px;
+  padding: 0 12px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  outline: none;
+  font-size: 17px;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: white;
+}
+
+.five{
+  display: block;
+  height: 42px;
+  width: 80px;
+  padding: 0 12px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  outline: none;
+  font-size: 17px;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: white;
+}
+
+.phone{
+  display: block;
+  height: 42px;
+  width: 300px;
+  padding: 0 12px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  outline: none;
+  font-size: 17px;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: white;
+}

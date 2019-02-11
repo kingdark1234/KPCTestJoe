@@ -10,16 +10,51 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { get } from 'lodash';
+import Header from '../../components/Header/Header';
+import CandidateForm from '../../components/CandidateForm/CandidateForm';
+import './indexStyle.css';
+import { getNanional, getCallingCode } from '../../redux/action';
 
 /* eslint-disable react/prefer-stateless-function */
-export default class HomePage extends React.PureComponent {
+class HomePage extends React.PureComponent {
+  async componentDidMount() {
+    await this.props.getNanional();
+    await this.props.getCallingCode();
+  }
+
   render() {
+    const { options } = this.props;
     return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
+      <div className="Content">
+        <Header />
+        <CandidateForm
+          national={get(options, 'national', [])}
+          callingCode={get(options, 'callingCode', [])}
+        />
+      </div>
     );
   }
 }
+HomePage.defaultProps = {
+  options: {},
+};
+HomePage.propTypes = {
+  options: PropTypes.object,
+  getNanional: PropTypes.func,
+  getCallingCode: PropTypes.func,
+};
+export const mapStateToProps = state => ({
+  options: state.get('options'),
+});
+
+export const mapDispatchToProps = dispatch => ({
+  getNanional: () => dispatch(getNanional()),
+  getCallingCode: () => dispatch(getCallingCode()),
+});
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(HomePage);
