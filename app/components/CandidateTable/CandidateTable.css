@@ -1,0 +1,17 @@
+.Button{
+  border: none;
+  color: rgb(0, 128, 255);
+  font-size: 24px;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.deleteInput:hover{cursor: pointer;}
+.deleteInput:focus{
+  border-color: rgb(0, 128, 255);
+}
+.contentInput{
+  display: flex;
+    justify-content: space-evenly;
+}

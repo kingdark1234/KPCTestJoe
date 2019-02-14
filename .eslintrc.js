@@ -79,7 +79,10 @@ module.exports = {
     'redux-saga/no-yield-in-race': 2,
     'redux-saga/yield-effects': 2,
     'require-yield': 0,
-    'react/prefer-stateless-function':0
+    'react/prefer-stateless-function':0,
+    'no-param-reassign':0,
+    'jsx-a11y/interactive-supports-focus':0,
+    'react/no-did-update-set-state':0
   },
   settings: {
     'import/resolver': {

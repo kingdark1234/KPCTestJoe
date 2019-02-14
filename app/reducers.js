@@ -8,6 +8,8 @@ import { connectRouter } from 'connected-react-router/immutable';
 import history from 'utils/history';
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
 import setOptions from './redux/reducers/option.reducer';
+import setCandidates from './redux/reducers/candidate.reducer';
+import setForm from './redux/reducers/form.reducer';
 
 /**
  * Merges the main reducer with the router state and dynamically injected reducers
@@ -15,7 +17,9 @@ import setOptions from './redux/reducers/option.reducer';
 export default function createReducer(injectedReducers = {}) {
   const rootReducer = combineReducers({
     options: setOptions,
+    candidates: setCandidates,
     language: languageProviderReducer,
+    form: setForm,
     ...injectedReducers,
   });
 

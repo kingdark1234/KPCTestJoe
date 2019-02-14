@@ -9,7 +9,7 @@ import {
 } from '../action';
 let sum = 0;
 
-const formatRes = (title, key, flag, value) => {
+const formatRes = (title, flag, key, value) => {
   const titleResouce = get(value, title, '');
   const flaged = get(value, 'flag', '');
   const formated = {
@@ -41,7 +41,7 @@ export function* fetchCallingCodes() {
   const data = get(response, 'data', []);
   const formatResponse = map(
     data,
-    formatRes.bind(this, 'callingCodes', true, 'callingCodes'),
+    formatRes.bind(this, 'callingCodes', true, 'callingCode'),
   );
   sum = 0;
   yield put(setCallingCode({ callingCode: formatResponse }));

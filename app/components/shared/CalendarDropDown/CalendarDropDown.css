@@ -70,4 +70,14 @@ span{
 .DayPicker-NavButton--prev{
   margin-right: 3em !important; 
 }
+.DayPicker-NavButton {
+  right:0.5em
+}
+
+.picker{
+  border: 1px solid lightgrey;
+  z-index: 99;
+  position: absolute;
+  background-color: white;
+}
       

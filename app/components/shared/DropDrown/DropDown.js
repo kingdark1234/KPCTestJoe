@@ -12,6 +12,13 @@ class DropDownList extends React.Component {
     flag: this.props.flag,
   };
 
+  componentDidUpdate(prevProps) {
+    const { title } = this.props;
+    if (prevProps.title !== title) {
+      this.setState({ headerTitle: title });
+    }
+  }
+
   handleClickOutside = () => {
     this.setState({
       listOpen: false,

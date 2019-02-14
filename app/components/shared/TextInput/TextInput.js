@@ -12,6 +12,8 @@ export default function TextInput(props) {
     isRequired,
     maxlength = '',
     className = 'TextField',
+    onChange,
+    value,
   } = props;
   return isRequired ? (
     <input
@@ -22,6 +24,8 @@ export default function TextInput(props) {
       pattern={pattern} // "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$"
       className={className}
       maxLength={maxlength}
+      onChange={onChange}
+      value={value}
       required
     />
   ) : (
@@ -33,6 +37,8 @@ export default function TextInput(props) {
       pattern={pattern}
       className={className}
       maxLength={maxlength}
+      onChange={onChange}
+      value={value}
     />
   );
 }
@@ -44,6 +50,7 @@ TextInput.defaultProps = {
 };
 
 TextInput.propTypes = {
+  onChange: PropTypes.func,
   maxlength: PropTypes.string,
   className: PropTypes.string,
   type: PropTypes.string.isRequired,
@@ -52,4 +59,5 @@ TextInput.propTypes = {
   title: PropTypes.string.isRequired,
   pattern: PropTypes.string,
   isRequired: PropTypes.bool,
+  value: PropTypes.string,
 };

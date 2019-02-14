@@ -2,12 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './RadioInput.css';
 
-export default function TitleInput(props) {
-  const { value } = props;
+export default function RadioInput(props) {
+  const { value, checked, onChange } = props;
   return (
     <div className="radio">
       <label>
-        <input type="radio" value={value} />
+        <input
+          name="gender"
+          type="radio"
+          value={value}
+          checked={checked}
+          onChange={onChange}
+        />
         &nbsp;&nbsp;
         {value}
       </label>
@@ -15,6 +21,8 @@ export default function TitleInput(props) {
   );
 }
 
-TitleInput.propTypes = {
+RadioInput.propTypes = {
   value: PropTypes.string.isRequired,
+  checked: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
